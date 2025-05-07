@@ -1,0 +1,21 @@
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.interior-mobile {
+  flex-direction: column; /* Orientación vertical */
+}
+
+.interior-normal {
+  flex-direction: row; /* Orientación horizontal */
+}

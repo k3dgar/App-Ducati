@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
 declare var $:any;
 
 @Component({
@@ -20,9 +20,11 @@ export class RegistroUsuariosScreenComponent implements OnInit{
   //Para las edades
   public selectedValue: string = "";
   public edades: any[] = [];
+
   constructor(
     private usuariosService: UsuariosService,
-    private router: Router
+    private router : Router
+    
   ){}
 
   ngOnInit(): void {
@@ -33,6 +35,18 @@ export class RegistroUsuariosScreenComponent implements OnInit{
 
   }
 
+  public soloLetras(event: KeyboardEvent) {
+    const charCode = event.key.charCodeAt(0);
+    // Permitir solo letras (mayúsculas y minúsculas) y espacio
+    if (
+      !(charCode >= 65 && charCode <= 90) &&  // Letras mayúsculas
+      !(charCode >= 97 && charCode <= 122) && // Letras minúsculas
+      charCode !== 32                         // Espacio
+    ) {
+      event.preventDefault();
+    }
+  }
+
   public llenarArrayEdades(){
     for (let i = 18; i <= 80; i++) {
       this.edades.push({value: i});
@@ -40,10 +54,10 @@ export class RegistroUsuariosScreenComponent implements OnInit{
   }
 
   public terminosCondiciones(){
-
+    
   }
 
-  public registrar():boolean{
+  public registrar(){
     //Validar
     this.errors = [];
 
@@ -51,7 +65,6 @@ export class RegistroUsuariosScreenComponent implements OnInit{
     if(!$.isEmptyObject(this.errors)){
       return false;
     }
-    return true;
     //TODO:Aquí va la lógica para registrar usuario.
   }
 

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// Removed duplicate import of BrowserAnimationsModule
 import { LoginScreenComponent } from './screens/login-screen/login-screen.component';
 import { RegistroUsuariosScreenComponent } from './screens/registro-usuarios-screen/registro-usuarios-screen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +24,12 @@ import { HeaderAppComponent } from './partials/header-app/header-app.component';
 import { FooterAppComponent } from './partials/footer-app/footer-app.component';
 import { LeftSidebarComponent } from './partials/left-sidebar/left-sidebar.component';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
+import { BasesPromocionScreenComponent } from './screens/bases-promocion-screen/bases-promocion-screen.component';
+import { PoliticaPrivacidadScreenComponent } from './screens/politica-privacidad-screen/politica-privacidad-screen.component';
+import { NuevoLookScreenComponent } from './screens/nuevo-look-screen/nuevo-look-screen.component';
+import { JuegoComponent } from './screens/juego/juego.component';
+import { JuegoTerminadoComponent } from './screens/juego-terminado/juego-terminado.component';
+import { TerminosCondicionesComponent } from './screens/terminos-condiciones/terminos-condiciones.component';
 
 
 @NgModule({
@@ -35,7 +40,13 @@ import { HomeScreenComponent } from './screens/home-screen/home-screen.component
     HeaderAppComponent,
     FooterAppComponent,
     LeftSidebarComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
+    BasesPromocionScreenComponent,
+    PoliticaPrivacidadScreenComponent,
+    NuevoLookScreenComponent,
+    JuegoComponent,
+    JuegoTerminadoComponent,
+    TerminosCondicionesComponent
   ],
   imports: [
     BrowserModule,
