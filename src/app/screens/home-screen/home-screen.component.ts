@@ -50,7 +50,7 @@ export class HomeScreenComponent implements OnInit {
   }
 
   public registrarCodigo(){
-
+    this.router.navigate(["instrucciones"]);
   }
 
   public obtenerCodigos(){

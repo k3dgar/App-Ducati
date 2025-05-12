@@ -9,6 +9,7 @@ import { NuevoLookScreenComponent } from './screens/nuevo-look-screen/nuevo-look
 import { JuegoComponent } from './screens/juego/juego.component';
 import { JuegoTerminadoComponent } from './screens/juego-terminado/juego-terminado.component';
 import { TerminosCondicionesComponent } from './screens/terminos-condiciones/terminos-condiciones.component';
+import { InstruccionesScreenComponent } from './screens/instrucciones-screen/instrucciones-screen.component';
 
 const routes: Routes = [
   //pantalla principal del login
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'juego', component: JuegoComponent, pathMatch: 'full' },
   { path: 'juego-terminado', component: JuegoTerminadoComponent, pathMatch: 'full' },
   { path: 'terminos-condiciones', component: TerminosCondicionesComponent, pathMatch: 'full' },
+  { path: 'instrucciones', component: InstruccionesScreenComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

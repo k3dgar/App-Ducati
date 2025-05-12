@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { Router } from '@angular/router'; 
+import { FacadeService } from 'src/app/services/facade.service';
 declare var $:any;
 
 @Component({
@@ -12,6 +13,7 @@ export class RegistroUsuariosScreenComponent implements OnInit{
   //Variables
   public user:any = {};
   public errors:any = {};
+  public isLoading:boolean = false;
 
   //Para contraseña
   public hide_1: boolean = false;
@@ -23,8 +25,8 @@ export class RegistroUsuariosScreenComponent implements OnInit{
 
   constructor(
     private usuariosService: UsuariosService,
-    private router : Router
-    
+    private facadeService:FacadeService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -65,7 +67,21 @@ export class RegistroUsuariosScreenComponent implements OnInit{
     if(!$.isEmptyObject(this.errors)){
       return false;
     }
-    //TODO:Aquí va la lógica para registrar usuario.
+    //Aquí vamos a registrar
+    if(this.user.terminos_condiciones){
+      this.isLoading = true;
+      this.facadeService.registrarUser(this.user).subscribe(
+        (response)=>{
+          alert("Usuario registrado correctamente")
+          //this.loginUser(this.user.email, this.user.password);
+        }, (error)=>{
+          alert("No se pudo iniciar sesión");
+          this.isLoading = false;
+        }
+      );
+    }else{
+      alert("Por favor acepta los términos y condiciones");
+    }
   }
 
   public goLogin(){

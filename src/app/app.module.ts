@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './screens/login-screen/login-screen.component';
@@ -30,6 +30,8 @@ import { NuevoLookScreenComponent } from './screens/nuevo-look-screen/nuevo-look
 import { JuegoComponent } from './screens/juego/juego.component';
 import { JuegoTerminadoComponent } from './screens/juego-terminado/juego-terminado.component';
 import { TerminosCondicionesComponent } from './screens/terminos-condiciones/terminos-condiciones.component';
+import { InstruccionesScreenComponent } from './screens/instrucciones-screen/instrucciones-screen.component';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { TerminosCondicionesComponent } from './screens/terminos-condiciones/ter
     NuevoLookScreenComponent,
     JuegoComponent,
     JuegoTerminadoComponent,
-    TerminosCondicionesComponent
+    TerminosCondicionesComponent,
+    InstruccionesScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { TerminosCondicionesComponent } from './screens/terminos-condiciones/ter
     MatSelectModule,
     MatCheckboxModule,
     NgxMaskDirective,
+    HttpClientModule
   ],
   providers: [
     provideNgxMask()
